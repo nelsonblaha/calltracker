@@ -1,3 +1,4 @@
+<% if current_user %>
 <h1>Listing calls</h1>
 
 <table>
@@ -27,3 +28,4 @@
 <br>
 
 <%= link_to 'New Call', new_call_path %>
+<% end %>

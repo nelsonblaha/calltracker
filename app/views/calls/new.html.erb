@@ -1,3 +1,5 @@
+<% if current_user %>
+
 <h1>New call</h1>
 
 <%= render 'form' %>
@@ -14,6 +16,7 @@
       <th></th>
       <th></th>
       <th></th>
+      <th></th>
     </tr>
   </thead>
 
@@ -21,11 +24,11 @@
     <% @calls.each do |call| %>
       <tr>
         <td><%= call.department %></td>
-        <th></th>
+        <td></td>
         <td><%= call.user.netid %></td>
-        <th></th>
+        <td></td>
         <td><%= call.created_at.to_formatted_s(:short) %></td>
-        <th></th>
+        <td>	</td>
         <td><%= link_to 'Show', call %></td>
         <td><%= link_to 'Edit', edit_call_path(call) %></td>
         <td><%= link_to 'Destroy', call, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -34,4 +37,7 @@
   </tbody>
 </table>
 
-<%= link_to 'Back', calls_path %>
+<%= link_to 'Back', new_call_path %>
+<% else %>
+ You aren't authorized to be here!
+<% end %>
