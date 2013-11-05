@@ -9,9 +9,11 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 gem 'bootstrap-sass', '~> 2.3.2.2'
+gem 'twitter-bootstrap-rails'
 gem 'figaro'
 gem 'high_voltage'
 gem 'simple_form'
+gem 'net-ldap'
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_19, :mri_20, :rbx]
