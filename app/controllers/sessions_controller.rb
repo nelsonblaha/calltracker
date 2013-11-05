@@ -1,0 +1,25 @@
+class SessionsController < ActionController::Base
+  def new
+  end
+
+  def create
+    user = User.find_by_netid(params[:session][:netid])
+    ldap = Net::LDAP.new
+    ldap.host = "ldap.cedar.uta.edu"
+    ldap.port = 636
+    ldap.base = 'cn=accounts, dc=uta, dc=edu'
+    ldap.encryption(:simple_tls)
+    ldap.auth "uid=#{params[:session][:netid]},cn=Accounts,dc=uta,dc=edu", params[:session][:password]
+    if ldap.bind
+      session[:user_id] = user.id
+      redirect_to root_url, :notice => "Logged in!"
+    else
+      redirect_to root_url, :alert => "#{ldap.get_operation_result}"
+    end
+  end
+
+  def destroy
+    session[:user_id] = nil
+    redirect_to root_url, :notice => "Logged out!"
+  end
+end

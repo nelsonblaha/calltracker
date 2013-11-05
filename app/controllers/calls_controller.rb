@@ -1,5 +1,6 @@
 class CallsController < ApplicationController
   before_action :set_call, only: [:show, :edit, :update, :destroy]
+  before_action :set_calls, only: :new
 
   # GET /calls
   # GET /calls.json
@@ -28,8 +29,8 @@ class CallsController < ApplicationController
     @call.user = User.last
     respond_to do |format|
       if @call.save
-        format.html { redirect_to @call, notice: 'Call was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @call }
+        format.html { redirect_to root_url, notice: 'Call was successfully created.' }
+        format.json { render action: 'new', status: :created, location: @call }
       else
         format.html { render action: 'new' }
         format.json { render json: @call.errors, status: :unprocessable_entity }
@@ -66,7 +67,9 @@ class CallsController < ApplicationController
     def set_call
       @call = Call.find(params[:id])
     end
-
+    def set_calls
+      @calls = Call.all
+    end
     # Never trust parameters from the scary internet, only allow the white list through.
     def call_params
       params.require(:call).permit(:department, :user)
