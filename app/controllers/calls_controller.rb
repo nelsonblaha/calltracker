@@ -26,7 +26,7 @@ class CallsController < ApplicationController
   # POST /calls.json
   def create
     @call = Call.new(call_params)
-    @call.user = User.last
+    @call.user = current_user
     respond_to do |format|
       if @call.save
         format.html { redirect_to root_url, notice: 'Call was successfully created.' }
@@ -57,7 +57,7 @@ class CallsController < ApplicationController
   def destroy
     @call.destroy
     respond_to do |format|
-      format.html { redirect_to calls_url }
+      format.html { redirect_to root_url }
       format.json { head :no_content }
     end
   end
