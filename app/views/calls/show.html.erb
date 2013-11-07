@@ -11,6 +11,6 @@
 </p>
 
 <%= link_to 'Edit', edit_call_path(@call) %> |
-<%= link_to 'Destroy', Wcall, method: :delete, data: { confirm: 'Are you sure?' } %> |
+<%= link_to 'Destroy', @call, method: :delete, data: { confirm: 'Are you sure?' } %> |
 
 <%= link_to 'Back', root_path %>
