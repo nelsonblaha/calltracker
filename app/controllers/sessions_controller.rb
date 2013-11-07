@@ -14,7 +14,7 @@ class SessionsController < ActionController::Base
       session[:user_id] = user.id
       redirect_to root_url, :notice => "Logged in!"
     else
-      redirect_to root_url, :alert => "#{ldap.get_operation_result}"
+      redirect_to root_url, :alert => "Invalid username or password!"
     end
   end
 

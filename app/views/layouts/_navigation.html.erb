@@ -2,6 +2,7 @@
   <li><%= link_to 'Home', root_path %></li>
   <% if current_user %>
   <li><%= link_to 'Log Out', log_out_path %></li>
+  <li><%= link_to 'Reports', reports_path %></li>
   <% else %>
   <li><a href="#myModal" data-toggle="modal">Log In</a></li>
   <% end %>

@@ -3,4 +3,5 @@
 <%= render 'form' %>
 
 <%= link_to 'Show', @call %> |
-<%= link_to 'Back', calls_path %>
+<%= link_to 'Delete', @call, method: :delete, data: { confirm: 'Are you sure?' } %> |
+<%= link_to 'Back', root_path %>

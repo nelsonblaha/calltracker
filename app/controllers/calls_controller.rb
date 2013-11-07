@@ -16,6 +16,7 @@ class CallsController < ApplicationController
   # GET /calls/new
   def new
     @call = Call.new
+    @autocomplete = Call.all.map(&:department).uniq
   end
 
   # GET /calls/1/edit

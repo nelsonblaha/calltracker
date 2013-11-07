@@ -1,5 +1,4 @@
 <% if current_user %>
-
 <h1>New call</h1>
 
 <%= render 'form' %>
@@ -29,9 +28,8 @@
         <td></td>
         <td><%= call.created_at.to_formatted_s(:short) %></td>
         <td>	</td>
-        <td><%= link_to 'Show', call %></td>
+        <td>	</td>
         <td><%= link_to 'Edit', edit_call_path(call) %></td>
-        <td><%= link_to 'Destroy', call, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

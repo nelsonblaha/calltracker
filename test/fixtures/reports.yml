@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  start_time: 2013-11-07 09:19:11
+  end_time: 2013-11-07 09:19:11
+  departments: 
+  users: 
+
+two:
+  start_time: 2013-11-07 09:19:11
+  end_time: 2013-11-07 09:19:11
+  departments: 
+  users: 

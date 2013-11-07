@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131104212949) do
+ActiveRecord::Schema.define(version: 20131107151911) do
 
   create_table "calls", force: true do |t|
     t.string   "department"
@@ -21,6 +21,15 @@ ActiveRecord::Schema.define(version: 20131104212949) do
   end
 
   add_index "calls", ["user_id"], name: "index_calls_on_user_id"
+
+  create_table "reports", force: true do |t|
+    t.datetime "start_time"
+    t.datetime "end_time"
+    t.text     "departments"
+    t.text     "users"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "netid"
