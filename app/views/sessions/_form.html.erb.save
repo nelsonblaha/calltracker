@@ -8,9 +8,7 @@
 <%= form_tag sessions_path do %>
   <div class="control-group">
       <%= label_tag :netid %>
-    <div class="control">
       <%= text_field_tag :netid, '', autofocus: "autofocus" %>
-    </div>
       <%= label_tag :password %>
       <%= password_field_tag :password %>
   </div>
