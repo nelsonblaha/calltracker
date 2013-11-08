@@ -1,0 +1,10 @@
+<div ng-app="callcenterApp">
+	<div ng-controller="consoleCtrl">
+		<ul style="list-style:none;">
+			<li ng-repeat="call in calls">
+				<input ng-model="call.department" ng-change="saveCall(call)" type="text">
+			</li>
+		</ul>
+		{{calls}}
+	</div>
+</div>

@@ -6,6 +6,10 @@ class CallsController < ApplicationController
   # GET /calls.json
   def index
     @calls = Call.all
+    respond_to do |format|
+      format.html { render 'index' }
+      format.json { render json: @calls }
+    end
   end
 
   # GET /calls/1
